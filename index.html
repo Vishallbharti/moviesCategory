@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/main.css">
+  <!-- font awesome link-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Tips On Movies</title>
+</head>
+
+<body>
+  <!--Header section-->
+  <div class="fluid-container">
+    <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Tips On Movies</a>
+      <!--Brand name-->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        <!--dropdown search box-->
+        <form class="form-inline my-2 my-lg-0">
+          <select class="form-control selectpicker mr-md-2 " id="select-movie-category" data-live-search="true">
+            <option data-tokens="china">Comming Movie</option>
+            <option data-tokens="malayasia">Movies In Theater</option>
+            <option data-tokens="singapore">India Top Rated Movies</option>
+            <option data-tokens="singapore">Top Rated Movies</option>
+            <option data-tokens="singapore">Favourite Movies</option>
+          </select>
+          <!--Search button-->
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="movie-search"
+            onclick="searchMovieCategory()">Search</button>
+        </form>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container">
+    <!--This row use when we search movie category-->
+    <div class="row" id="show-movie">
+
+    </div>
+
+    <!--Comming soon movies-->
+    <div class="row" id="comming-movies">
+      <div class="col-sm-12">
+        <h3 class="mt-2 p-1 text-success">Comming Movies...</h3>
+        <div class="row" id="comming-movie">
+        </div>
+      </div>
+    </div>
+
+    <!-- Movies In Theater -->
+    <div class="row" id="theater-movie">
+      <div class="col-sm-12">
+        <h3 class="mt-2 p-1  text-success">Movies In Theater...</h3>
+        <div class="row" id="movie-in-theater"> </div>
+      </div>
+    </div>
+
+
+    <!-- Top rated movies in Inida -->
+    <div class="row" id="movies-in-india">
+      <div class="col-sm-12">
+        <h3 class="mt-2 p-1  text-success"> Top Rated Movies In Inida...</h3>
+        <div class="row" id="top-rated-movie-in-india"></div>
+      </div>
+    </div>
+
+
+
+    <!-- Top rated movies -->
+    <div class="row" id="top-rated-movies">
+      <div class="col-sm-12">
+        <h3 class="mt-2 p-1  text-success"> Top Rated Movies...</h3>
+        <div class="row" id="top-rated-movie"></div>
+      </div>
+    </div>
+
+    <div class="row" id="fav-movies">
+      <div class="col-sm-12">
+        <h3 class="mt-2 p-1  text-success">Favourite Movies...</h3>
+        <div class="row" id="favourite-movie"></div>
+      </div>
+    </div>
+  </div>
+  <!--footer-->
+  <div class="jumbotron text-center" style="margin-bottom:0">
+    <div class="col-sm-12">
+      <h3 class="mt-2 p-1 text-success"> Full Stack Developer</h3>
+      <div class="row">
+        <div class="col-sm-12 col-md-4 col-lg-4 mb-5">
+          <div class="bg-secondary p-2" style="border-radius: 10px;">
+            <h4>Address</h4>
+            <p>Mariamma Nagar</p>
+            <p>DR AB ROAD</p>
+            <p>Lotus, Worli</p>
+            <p>Mumbai, Maharashtra, 400018</p>
+          </div>
+
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 mb-5">
+          <div class="bg-secondary p-2" style="border-radius: 10px;">
+            <h4>How To Contact Me</h4>
+            <p><i class="fa fa-phone-square" aria-hidden="true"></i> : 9151516292</p>
+            <p><i class="fa fa-envelope-o" aria-hidden="true"></i> : vishal210198p@gmail.com</p>
+            <p><i class="fa fa-gitlab" aria-hidden="true"></i> : https://gitlab.com/Vishal21HCL</p>
+            <p><i class="fa fa-facebook-square" aria-hidden="true"></i> : https://www.facebook.com/vishal21</p>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 mb-5">
+          <div class="bg-secondary p-2" style="border-radius: 10px;">
+            <h4>Technoloy</h4>
+            <p>HTML, CSS, Boostrap4</p>
+            <p>C,Java,JavaScriot,Python,PHP</p>
+            <p>Spring Boot, Jquery, YII2 </p>
+            <p>MySQL</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h4 class="mt-2">© Copyright 2021 www.TipOnMove.com. All rights reserved. Developed by Vishal Bharti.</h4>
+  </div>
+  </div>
+  <!--Linke main javascriot file-->
+  <script src="js/movieService.js"></script>
+  <script>
+    //Function for search movie category
+    function searchMovieCategory() {
+      //get value from search box
+      var movieCategory = document.getElementById('select-movie-category').value;
+      //check the condition regarding movie category
+      if (movieCategory === 'Comming Movie') {
+        //get the all html content by movie category id and store in a varibale
+        var contentOfSelectedMovieCategory = document.getElementById("comming-movies").innerHTML;
+        // Then show the store html content in different div
+        document.getElementById("show-movie").innerHTML = contentOfSelectedMovieCategory;
+        $(document).ready(function () {
+          //hide the div of original searched movie category
+          $('#comming-movies').hide();
+          // apart from searhed movie category div all div will show
+          $('#theater-movie').show();
+          $('#movies-in-india').show();
+          $('#top-rated-movies').show();
+          $('#fav-movies').show();
+        });
+        event.preventDefault();
+      }
+
+      if (movieCategory === 'Movies In Theater') {
+        //get the all html content by movie category id and store in a varibale
+        var contentOfSelectedMovieCategory = document.getElementById("theater-movie").innerHTML;
+        // Then show the store html content in different div
+        document.getElementById("show-movie").innerHTML = contentOfSelectedMovieCategory;
+        $(document).ready(function () {
+          //hide the div of original searched movie category
+          $('#theater-movie').hide();
+          // apart from searhed movie category div all div will show
+          $('#comming-movies').show();
+          $('#movies-in-india').show();
+          $('#top-rated-movies').show();
+          $('#fav-movies').show();
+        });
+        event.preventDefault();
+      }
+
+      if (movieCategory === 'India Top Rated Movies') {
+        //get the all html content by movie category id and store in a varibale
+        var contentOfSelectedMovieCategory = document.getElementById("movies-in-india").innerHTML;
+        // Then show the store html content in different div
+        document.getElementById("show-movie").innerHTML = contentOfSelectedMovieCategory;
+        $(document).ready(function () {
+          //hide the div of original searched movie category
+          $('#movies-in-india').hide();
+          // apart from searhed movie category div all div will show
+          $('#theater-movie').show();
+          $('#comming-movies').show();
+          $('#top-rated-movies').show();
+          $('#fav-movies').show();
+        });
+        event.preventDefault();
+      }
+
+
+      if (movieCategory === 'Top Rated Movies') {
+        //get the all html content by movie category id and store in a varibale
+        var contentOfSelectedMovieCategory = document.getElementById("top-rated-movies").innerHTML;
+        // Then show the store html content in different div
+        document.getElementById("show-movie").innerHTML = contentOfSelectedMovieCategory;
+        $(document).ready(function () {
+          //hide the div of original searched movie category
+          $('#top-rated-movies').hide();
+          // apart from searhed movie category div all div will show
+          $('#movies-in-india').show();
+          $('#theater-movie').show();
+          $('#comming-movies').show();
+          $('#fav-movies').show();
+        });
+        event.preventDefault();
+      }
+
+      if (movieCategory === 'Favourite Movies') {
+        //get the all html content by movie category id and store in a varibale
+        var contentOfSelectedMovieCategory = document.getElementById("fav-movies").innerHTML;
+        // Then show the store html content in different div
+        document.getElementById("show-movie").innerHTML = contentOfSelectedMovieCategory;
+        $(document).ready(function () {
+          //hide the div of original searched movie category
+          $('#fav-movies').hide();
+          // apart from searhed movie category div all div will show
+          $('#top-rated-movies').show();
+          $('#movies-in-india').show();
+          $('#theater-movie').show();
+          $('#comming-movies').show();
+        });
+        event.preventDefault();
+      }
+
+    }
+
+  </script>
+</body>
+
+</html>

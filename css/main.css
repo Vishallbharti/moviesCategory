@@ -1,0 +1,14 @@
+body{
+    margin: 0;
+    background-image: url(../img/background.jpg) ;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    
+}
+.container{
+    background-image: url(../img/background.jpg) ;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
